@@ -30,6 +30,11 @@ public class main {
 
 	}
 
+	static int lcm(int a, int b) {
+
+		return a * b / gcd(a, b);
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -47,5 +52,11 @@ public class main {
 		result = gcd1(n, m);
 
 		System.out.println("gcd1 : " + result);
+		
+		//최소공배수
+		
+		result = lcm(n,m);
+		
+		System.out.println("lcm : " + result);
 	}
 }
