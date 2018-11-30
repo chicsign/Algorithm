@@ -10,25 +10,34 @@ public class maxheap {
 		this.maxsize = maxsize;
 		this.heapsize = 0;
 		heap = new int[maxsize + 1];
-		heap[0] = Integer.MAX_VALUE; // Èü¿¡ 0¹øÂ° ¹è¿­Àº »ç¿ëÇÏÁö ¾Ê´Â´Ù.
+		heap[0] = Integer.MAX_VALUE; // í™ì— 0ë²ˆì§¸ ë°°ì—´ì€ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
 
 	}
 
 	public void delete() {
 
 		System.out.println("Max value : " + heap[1]);
-		
+
 		heap[1] = heap[this.heapsize];
 		heap[this.heapsize] = 0;
-		
+		heapsize--;
 
-		for (int i = 1; i <this.heapsize ; i++) {
+		for (int i = 1; i < this.heapsize; i++) {
 
-			if (heap[i] < heap[i * 2]) {
-				swap(i, i * 2);
+			if (heap[i * 2] > heap[i * 2 + 1]) {
+				if (heap[i] < heap[i * 2]) {
+					swap(i, i * 2);
+				} else {
+					break;
+				}
 			} else {
-				break;
+				if (heap[i] < heap[i * 2 + 1]) {
+					swap(i, i * 2 + 1);
+				} else {
+					break;
+				}
 			}
+
 		}
 	}
 
@@ -58,8 +67,7 @@ public class maxheap {
 	private void print() {
 
 		for (int i = 1; i <= this.heapsize / 2; i++) {
-			System.out.print(
-					" Parent : " + heap[i] + " left : " + heap[2 * i] + " right :" + heap[2 * i + 1]);
+			System.out.print(" Parent : " + heap[i] + " left : " + heap[2 * i] + " right :" + heap[2 * i + 1]);
 			System.out.println();
 		}
 	}
@@ -76,13 +84,15 @@ public class maxheap {
 		heap.insert(4);
 		heap.insert(3);
 		heap.insert(2);
-		heap.insert(2);
 		heap.insert(1);
-		heap.insert(3);
 
 		heap.print();
-		
+
 		heap.delete();
+		heap.delete();
+		heap.delete();
+		heap.delete();
+		
 
 		heap.print();
 	}
