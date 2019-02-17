@@ -62,9 +62,10 @@ public class Main {
 	// 피보나치 반복문
 	public static void main(String[] args) {
 
-		int input = 8;
+		Scanner sc = new Scanner(System.in);
 
-		f = new int[input + 1];
+		int input = sc.nextInt();
+		f = new long[input + 1];
 		f[0] = 1; 
 		f[1] = 1;
 
