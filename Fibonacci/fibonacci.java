@@ -34,7 +34,7 @@ public class Main {
 	*/
 	
 	
-	// 피보나치 메모이제이
+	// 피보나치 메모이제이션
 	/*
 
 	public static void main(String[] args) {
