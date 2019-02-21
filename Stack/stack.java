@@ -25,6 +25,7 @@ class Stack<T> {
 
 	public T pop() {
 		if (top == null) {
+			
 			throw new EmptyStackException();
 		}
 
@@ -71,7 +72,7 @@ public class myStack {
 		s.push(3);
 		s.push(4);
 		s.push(5);
-//		s.push(6);
+//		s.push(6); //stack over flow
 
 		System.out.println(s.pop());
 		System.out.println(s.peek());
@@ -79,6 +80,8 @@ public class myStack {
 		System.out.println(s.isEmpty());
 		System.out.println(s.pop());
 		System.out.println(s.pop());
+		System.out.println(s.pop());
+//		System.out.println(s.pop()); // empty stack error
 
 	}
 
