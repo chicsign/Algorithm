@@ -1,0 +1,67 @@
+
+public class maxHeap {
+
+	public static void main(String[] args) {
+
+		int[] arr = { 230, 10, 60, 550, 40, 220, 20 };
+
+		heapSort(arr);
+
+		for (int v : arr) {
+			System.out.println(v);
+		}
+	}
+
+	private static void heapSort(int[] arr) {
+		// TODO Auto-generated method stub
+
+		int n = arr.length;
+		// 1.Max heapd을 만듭니다.
+
+		for (int i = n / 2 - 1; i >= 0; i--) {
+
+			heapify(arr, n, i);
+		}
+
+		// 2. 최대힙의 루트 노드를 마지막 리프와 swap 후에 힙 사이즈를 줄이고, 힙 사이즈가 1보다 크면 반복합니다.
+
+		for (int i = n - 1; i > 1; i--) {
+
+			swap(arr, 0, i);
+			heapify(arr, i, 0);
+		}
+
+	}
+
+	private static void swap(int[] arr, int a, int b) {
+		// TODO Auto-generated method stub
+
+		int temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
+
+	}
+
+	private static void heapify(int[] arr, int n, int i) {
+		// TODO Auto-generated method stub
+
+		int p = i;
+		int l = p * 2 + 1;
+		int r = p * 2 + 2;
+
+		if (l < n && arr[p] < arr[l]) {
+			p = l;
+		}
+
+		if (r < n && arr[p] < arr[r]) {
+			p = r;
+		}
+
+		if (i != p) {
+
+			swap(arr, p, i);
+			heapify(arr, n, p);
+		}
+	}
+
+}
