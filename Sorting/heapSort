@@ -25,7 +25,7 @@ public class maxHeap {
 
 		// 2. 최대힙의 루트 노드를 마지막 리프와 swap 후에 힙 사이즈를 줄이고, 힙 사이즈가 1보다 크면 반복합니다.
 
-		for (int i = n - 1; i > 1; i--) {
+		for (int i = n - 1; i > 0; i--) {
 
 			swap(arr, 0, i);
 			heapify(arr, i, 0);
