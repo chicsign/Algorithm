@@ -30,7 +30,7 @@ class Stack<T> {
 
 		T item = top.data;
 		top = top.next;
-
+		count--;
 		return item;
 	}
 
