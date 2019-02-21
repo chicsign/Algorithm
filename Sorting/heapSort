@@ -3,7 +3,7 @@ public class maxHeap {
 
 	public static void main(String[] args) {
 
-		int[] arr = { 230, 10, 60, 550, 40, 220, 20 };
+		int[] arr = { 7, 6, 5, 8, 3, 5, 9, 1, 6};
 
 		heapSort(arr);
 
